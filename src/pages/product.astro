@@ -1,0 +1,89 @@
+---
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
+import { Image } from "astro:assets";
+import Home from '../layouts/Home.astro';
+---
+
+<Home title="Product | Netalket">
+  <!-- Card Blog -->
+  <div class="max-w-[85rem] py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+      <!-- Card -->
+      <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
+          <Image class="w-full object-cover h-auto rounded-xl" loading="eager" src={img1} alt="Description">
+        </div>
+        <div class="pb-2 px-4 md:px-6 md:py-0">
+          <span class="block mb-1 text-base font-semibold dark:text-blue-500">
+            Aset Ayat Alquran
+          </span>
+          <h3 class="text-xl mt-1 font-semibold text-indigo-500 dark:text-gray-300 dark:hover:text-white">
+            Rp. 50.000
+          </h3>
+          <p class="text-gray-400 text-sm">
+            <s>Rp.100.000</s><span class="text-red-400 font-semibold"> 50%</span>
+          </p>
+          <p class="mt-2 text-gray-600 text-sm">
+            	⭐ 5+ | 9rb Terbantu
+          </p>
+        </div>
+        <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          Miliki
+        </button>
+      </div>
+      <!-- End Card -->
+      <!-- Card -->
+      <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
+          <Image class="w-full object-cover h-auto rounded-xl" loading="eager" src={img1} alt="Description">
+        </div>
+        <div class="pb-2 px-4 md:px-6 md:py-0">
+          <span class="block mb-1 text-base font-semibold dark:text-blue-500">
+            Aset Ayat Alquran
+          </span>
+          <h3 class="text-xl mt-1 font-semibold text-indigo-500 dark:text-gray-300 dark:hover:text-white">
+            Rp. 50.000
+          </h3>
+          <p class="text-gray-400 text-sm">
+            <s>Rp.100.000</s><span class="text-red-400 font-semibold"> 50%</span>
+          </p>
+          <p class="mt-2 text-gray-600 text-sm">
+            	⭐ 5+ | 9rb Terbantu
+          </p>
+        </div>
+        <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          Miliki
+        </button>
+      </div>
+      <!-- End Card -->
+      <!-- Card -->
+      <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
+          <Image class="w-full object-cover h-auto rounded-xl" loading="eager" src={img1} alt="Description">
+        </div>
+        <div class="pb-2 px-4 md:px-6 md:py-0">
+          <span class="block mb-1 text-base font-semibold dark:text-blue-500">
+            Aset Ayat Alquran
+          </span>
+          <h3 class="text-xl mt-1 font-semibold text-indigo-500 dark:text-gray-300 dark:hover:text-white">
+            Rp. 50.000
+          </h3>
+          <p class="text-gray-400 text-sm">
+            <s>Rp.100.000</s><span class="text-red-400 font-semibold"> 50%</span>
+          </p>
+          <p class="mt-2 text-gray-600 text-sm">
+            	⭐ 5+ | 9rb Terbantu
+          </p>
+        </div>
+        <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          Miliki
+        </button>
+      </div>
+      <!-- End Card -->
+    </div>
+    <!-- End Grid -->
+  </div>
+  <!-- End Card Blog -->
+</Home>
