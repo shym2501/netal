@@ -4,23 +4,25 @@ import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import { Image } from "astro:assets";
 import Home from '../layouts/Home.astro';
+import Login from '../components/Auth.astro';
+import Tabs from '../components/Tabs.astro';
 ---
 
 <Home title="Home | Netalket">
-  <section class="container mx-4 px-4 py-3 mx-auto">
-  	<!-- Announcement Banner -->
-    <div class="flex justify-start">
-      <a class="inline-flex items-center gap-x-2 bg-white border border-indigo-600 text-sm text-gray-800 ps-3 rounded-lg transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
-        PRO release - Join to waitlist
-        <span class="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg bg-gray-200 font-semibold text-sm text-indigo-600 dark:bg-gray-700 dark:text-gray-400">
-          <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </span>
-      </a>
-    </div>
-    <!-- End Announcement Banner -->
-  	<div class="grid gap-2 grid-cols-2 mt-3">
-  		<div class="flex flex-col rounded-sm max-w-md text-left">
-  			<h1 class="text-2xl font-bold leading-none sm:text-6xl leading-normal">Platform Produk Digital
+  <section class="container mx-4 px-4 py-3">
+    <div class="grid gap-2 grid-cols-2 mt-3">
+      <div class="flex flex-col rounded-sm max-w-md text-left">
+        <!-- Announcement Banner -->
+        <div class="flex justify-start mb-2">
+          <a class="inline-flex items-center gap-x-2 bg-white border border-indigo-600 text-sm text-gray-800 ps-3 rounded-lg transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
+            PRO release - Join to waitlist
+            <span class="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg bg-gray-200 font-semibold text-sm text-indigo-600 dark:bg-gray-700 dark:text-gray-400">
+              <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </a>
+        </div>
+        <!-- End Announcement Banner -->
+  			<h1 class="text-2xl font-bold sm:text-6xl leading-normal">Platform Produk Digital
   				<span class="text-indigo-400">Netalket</span>
   			</h1>
   			
@@ -28,275 +30,23 @@ import Home from '../layouts/Home.astro';
           Daftar Sekarang
         </button>
 
-        <div id="hs-modal-signup" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto flex justify-center items-center">
-          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-            <div class="bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-4 sm:p-7">
-                <div class="text-center">
-                  <h2 class="block text-2xl font-bold text-gray-800 dark:text-gray-200">Sign up</h2>
-                  <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    Already have an account?
-                    <a class="text-indigo-500 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="../examples/html/modal-signin.html">
-                      Sign in here
-                    </a>
-                  </p>
-                </div>
-        
-                <div class="mt-5">
-                  <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
-                    <svg class="w-4 h-auto" width="46" height="47" viewBox="0 0 46 47" fill="none">
-                      <path d="M46 24.0287C46 22.09 45.8533 20.68 45.5013 19.2112H23.4694V27.9356H36.4069C36.1429 30.1094 34.7347 33.37 31.5957 35.5731L31.5663 35.8669L38.5191 41.2719L38.9885 41.3306C43.4477 37.2181 46 31.1669 46 24.0287Z" fill="#4285F4"/>
-                      <path d="M23.4694 47C29.8061 47 35.1161 44.9144 39.0179 41.3012L31.625 35.5437C29.6301 36.9244 26.9898 37.8937 23.4987 37.8937C17.2793 37.8937 12.0281 33.7812 10.1505 28.1412L9.88649 28.1706L2.61097 33.7812L2.52296 34.0456C6.36608 41.7125 14.287 47 23.4694 47Z" fill="#34A853"/>
-                      <path d="M10.1212 28.1413C9.62245 26.6725 9.32908 25.1156 9.32908 23.5C9.32908 21.8844 9.62245 20.3275 10.0918 18.8588V18.5356L2.75765 12.8369L2.52296 12.9544C0.909439 16.1269 0 19.7106 0 23.5C0 27.2894 0.909439 30.8731 2.49362 34.0456L10.1212 28.1413Z" fill="#FBBC05"/>
-                      <path d="M23.4694 9.07688C27.8699 9.07688 30.8622 10.9863 32.5344 12.5725L39.1645 6.11C35.0867 2.32063 29.8061 0 23.4694 0C14.287 0 6.36607 5.2875 2.49362 12.9544L10.0918 18.8588C11.9987 13.1894 17.25 9.07688 23.4694 9.07688Z" fill="#EB4335"/>
-                    </svg>
-                    Sign up with Google
-                  </a>
-        
-                  <div class="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">Or</div>
-        
-                  <!-- Form -->
-                  <form>
-                    <div class="grid gap-y-4">
-                      <!-- Form Group -->
-                      <div>
-                        <label for="email" class="block text-sm mb-2 dark:text-white">Email address</label>
-                        <div class="relative">
-                          <input type="email" id="email" name="email" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-indigo-400 focus:ring-indigo-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" required aria-describedby="email-error">
-                          <div class="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                            <svg class="size-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                            </svg>
-                          </div>
-                        </div>
-                        <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
-                      </div>
-                      <!-- End Form Group -->
-        
-                      <!-- Form Group -->
-                      <div>
-                        <label for="password" class="block text-sm mb-2 dark:text-white">Password</label>
-                        <div class="relative">
-                          <input type="password" id="password" name="password" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-indigo-400 focus:ring-indigo-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" required aria-describedby="password-error">
-                          <div class="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                            <svg class="size-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                            </svg>
-                          </div>
-                        </div>
-                        <p class="hidden text-xs text-red-600 mt-2" id="password-error">8+ characters required</p>
-                      </div>
-                      <!-- End Form Group -->
-        
-                      <!-- Form Group -->
-                      <div>
-                        <label for="confirm-password" class="block text-sm mb-2 dark:text-white">Confirm Password</label>
-                        <div class="relative">
-                          <input type="password" id="confirm-password" name="confirm-password" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-indigo-400 focus:ring-indigo-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" required aria-describedby="confirm-password-error">
-                          <div class="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                            <svg class="size-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                            </svg>
-                          </div>
-                        </div>
-                        <p class="hidden text-xs text-red-600 mt-2" id="confirm-password-error">Password does not match the password</p>
-                      </div>
-                      <!-- End Form Group -->
-        
-                      <!-- Checkbox -->
-                      <div class="flex items-center">
-                        <div class="flex">
-                          <input id="remember-me" name="remember-me" type="checkbox" class="shrink-0 mt-0.5 border-gray-200 rounded text-indigo-500 pointer-events-none focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-indigo-400 dark:checked:border-indigo-400 dark:focus:ring-offset-gray-800">
-                        </div>
-                        <div class="ms-3">
-                          <label for="remember-me" class="text-sm dark:text-white">I accept the <a class="text-indigo-500 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">Terms and Conditions</a></label>
-                        </div>
-                      </div>
-                      <!-- End Checkbox -->
-        
-                      <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Sign up</button>
-                      <button type="button" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#hs-modal-signup">
-                        Cancel
-                      </button>
-                    </div>
-                  </form>
-                  <!-- End Form -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Login />
+
   		</div>
   		<div class="sm:ms-8 mx-auto">
-  		  <Image src={img} loading="eager" class="" alt="Netalket"/>
+  		  <Image src={img} loading="eager" alt="Netalket"/>
   		</div>
   	</div>
   </section>
   
-  <section class="container mx-4 mx-auto my-5 md:my-8">
-    <div class="flex justify-center md:justify-start md:ms-5">
-      <div class="flex bg-white rounded-t-lg transition p-1.5 border border-t-indigo-600 border-x-indigo-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-        <nav class="flex space-x-2" aria-label="Tabs" role="tablist">
-          <button type="button" class="hs-tab-active:bg-indigo-100 hs-tab-active:text-indigo-500 hs-tab-active:dark:bg-gray-800 hs-tab-active:dark:text-gray-400 dark:hs-tab-active:bg-gray-800 py-2.5 px-4 inline-flex items-center gap-x-1.5 bg-gray-100 text-xs text-gray-500 hover:text-gray-700 font-medium rounded-lg hover:hover:text-indigo-500 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:text-white active" id="segment-item-1" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
-            Special Offer
-          </button>
-          <button type="button" class="hs-tab-active:bg-indigo-100 hs-tab-active:text-indigo-500 hs-tab-active:dark:bg-gray-800 hs-tab-active:dark:text-gray-400 dark:hs-tab-active:bg-gray-800 py-2.5 px-4 inline-flex items-center gap-x-1.5 bg-gray-100 text-xs text-gray-500 hover:text-gray-700 font-medium rounded-lg hover:hover:text-indigo-500 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:text-white" id="segment-item-2" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
-            Free Assets
-          </button>
-          <button type="button" class="hs-tab-active:bg-indigo-100 hs-tab-active:text-indigo-500 hs-tab-active:dark:bg-gray-800 hs-tab-active:dark:text-gray-400 dark:hs-tab-active:bg-gray-800 py-2.5 px-4 inline-flex items-center gap-x-1.5 bg-gray-100 text-xs text-gray-500 hover:text-gray-700 font-medium rounded-lg hover:hover:text-indigo-500 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:text-white" id="segment-item-3" data-hs-tab="#segment-3" aria-controls="segment-3" role="tab">
-            Vouchermu
-          </button>
-        </nav>
-      </div>
-    </div>
-
-    <div class="-mt-0">
-      <div id="segment-1" class="flex flex-col bg-white border border-indigo-600 shadow-sm rounded-xl p-4 md:p-5 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" role="tabpanel" aria-labelledby="segment-item-1">
-        
-        <!-- Card Blog -->
-        <div class="max-w-[85rem] sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <!-- Grid -->
-          <div class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
-            <!-- Card -->
-            <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-              <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
-                <Image class="w-full object-cover h-auto rounded-xl" loading="eager" src={img1} alt="Description">
-              </div>
-              <div class="pb-2 px-4 md:px-6 md:py-0">
-                <span class="block mb-1 text-base font-semibold dark:text-blue-500">
-                  Aset Ayat Alquran
-                </span>
-                <h3 class="text-xl mt-1 font-semibold text-indigo-500 dark:text-gray-300 dark:hover:text-white">
-                  Rp. 50.000
-                </h3>
-                <p class="text-gray-400 text-sm">
-                  <s>Rp.100.000</s><span class="text-red-400 font-semibold"> 50%</span>
-                </p>
-                <p class="mt-2 text-gray-600 text-sm">
-                  	⭐ 5+ | 9rb Terbantu
-                </p>
-              </div>
-              <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                Miliki
-              </button>
-            </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-              <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
-                <Image class="w-full object-cover h-auto rounded-xl" loading="eager" src={img1} alt="Description">
-              </div>
-              <div class="pb-2 px-4 md:px-6 md:py-0">
-                <span class="block mb-1 text-base font-semibold dark:text-blue-500">
-                  Aset Ayat Alquran
-                </span>
-                <h3 class="text-xl mt-1 font-semibold text-indigo-500 dark:text-gray-300 dark:hover:text-white">
-                  Rp. 50.000
-                </h3>
-                <p class="text-gray-400 text-sm">
-                  <s>Rp.100.000</s><span class="text-red-400 font-semibold"> 50%</span>
-                </p>
-                <p class="mt-2 text-gray-600 text-sm">
-                  	⭐ 5+ | 9rb Terbantu
-                </p>
-              </div>
-              <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                Miliki
-              </button>
-            </div>
-            <!-- End Card -->
-          </div>
-          <!-- End Grid -->
-        </div>
-        <!-- End Card Blog -->
-      </div>
-      
-      <div id="segment-2" class="hidden flex flex-col bg-white border border-indigo-600 shadow-sm rounded-xl p-4 md:p-5 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" role="tabpanel" aria-labelledby="segment-item-2">
-        
-        <!-- Card Section -->
-        <div class="w-full mx-auto">
-          <!-- Grid -->
-          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            <!-- Card -->
-            <a class="group flex flex-col bg-white border border-t-4 border-e-4 border-indigo-400 shadow-md rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
-              <div class="p-2 md:p-3">
-                <div class="flex justify-between items-center">
-                  <div class="flex items-center">
-                    <img class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
-                    <div class="ms-3">
-                      <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Bristol, UK
-                      </h3>
-                    </div>
-                  </div>
-                  <div class="ps-3">
-                    <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-amber-500 text-white dark:bg-blue-800/30 dark:text-blue-500">Free</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <!-- End Card -->
-        
-            <!-- Card -->
-            <a class="group flex flex-col bg-white border border-t-4 border-e-4 border-indigo-400 shadow-md rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
-              <div class="p-2 md:p-3">
-                <div class="flex justify-between items-center">
-                  <div class="flex items-center">
-                    <img class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1582542021865-bde52fd7c3cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
-                    <div class="ms-3">
-                      <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Oxford, UK
-                      </h3>
-                    </div>
-                  </div>
-                  <div class="ps-3">
-                    <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-amber-500 text-white dark:bg-blue-800/30 dark:text-blue-500">Free</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <!-- End Card -->
-        
-            <!-- Card -->
-            <a class="group flex flex-col bg-white border border-t-4 border-e-4 border-indigo-400 shadow-md rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
-              <div class="p-2 md:p-3">
-                <div class="flex justify-between items-center">
-                  <div class="flex items-center">
-                    <img class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1571044880241-95d4c9aa06f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
-                    <div class="ms-3">
-                      <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Edinburgh, UK
-                      </h3>
-                    </div>
-                  </div>
-                  <div class="ps-3">
-                    <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-amber-500 text-white dark:bg-blue-800/30 dark:text-blue-500">Free</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <!-- End Card -->
-        
-          </div>
-          <!-- End Grid -->
-        </div>
-        <!-- End Card Section -->
-      </div>
-      
-      <div id="segment-3" class="hidden flex flex-col bg-white border border-indigo-600 shadow-sm rounded-xl p-4 md:p-5 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" role="tabpanel" aria-labelledby="segment-item-3">
-        <p class="text-gray-500 dark:text-gray-400">
-          This is the <em class="font-semibold text-gray-800 dark:text-gray-200">third</em> item's tab body.
-        </p>
-      </div>
-    </a>
-  </section>
+  <Tabs />
   
-  <section class="container mx-4 mx-auto my-5 md:my-8">
+  <section class="container mx-auto my-5 md:my-8">
     <h2 class="mt-8 mb-3 font-semibold text-xl">Produk Terlaris</h2>
       <!-- Card Blog -->
     <div class="max-w-[85rem]">
       <!-- Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         <!-- Card -->
         <div class="group flex flex-col h-full bg-white border border-t-4 border-t-indigo-400 shadow-md rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
           <div class="flex flex-col justify-center items-center rounded-xl m-2 md:m-4">
@@ -316,7 +66,7 @@ import Home from '../layouts/Home.astro';
               	⭐ 5+ | 9rb Terbantu
             </p>
           </div>
-          <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          <button type="button" class="mt-2 mb-3 mx-auto py-2 px-5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
             Miliki
           </button>
         </div>
@@ -340,7 +90,7 @@ import Home from '../layouts/Home.astro';
               	⭐ 5+ | 9rb Terbantu
             </p>
           </div>
-          <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          <button type="button" class="mx-auto mt-2 mb-3 py-2 px-5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
             Miliki
           </button>
         </div>
@@ -364,7 +114,7 @@ import Home from '../layouts/Home.astro';
               	⭐ 5+ | 9rb Terbantu
             </p>
           </div>
-          <button type="button" class="mx-3.5 mt-2 mb-3 mx-auto py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+          <button type="button" class="mx-auto mt-2 mb-3 py-2 px-5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
             Miliki
           </button>
         </div>
@@ -375,7 +125,7 @@ import Home from '../layouts/Home.astro';
     <!-- End Card Blog -->
   </section>
   
-  <section class="container mx-4 mx-auto my-5 md:my-8">
+  <section class="container mx-auto my-5 md:my-8">
     <h2 class="mt-8 mb-3 font-semibold text-xl">Service</h2>
     <!-- Card Section -->
     <div class="w-full mx-auto">
@@ -386,7 +136,7 @@ import Home from '../layouts/Home.astro';
           <div class="p-3 md:p-4">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
-                <img class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
+                <Image class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description" />
                 <div class="ms-3">
                   <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                     Pembuatan Website/Aplikasi
@@ -408,7 +158,7 @@ import Home from '../layouts/Home.astro';
           <div class="p-3 md:p-4">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
-                <img class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
+                <Image class="size-[38px] rounded-full" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description" />
                 <div class="ms-3">
                   <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                     Jasa Kreatif/Agency
@@ -433,7 +183,7 @@ import Home from '../layouts/Home.astro';
     
   </section>
   
-  <section class="container mx-4 mx-auto my-5 md:my-8">
+  <section class="container mx-auto my-5 md:my-8">
     <h2 class="mt-8 mb-3 font-semibold text-xl">Beri Dukungan</h2>
     <!-- Card Section -->
     <div class="w-full mx-auto">
@@ -444,7 +194,7 @@ import Home from '../layouts/Home.astro';
           <div class="p-3 md:p-4">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
-                <img class="size-[38px] rounded-lg" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
+                <Image class="size-[38px] rounded-lg" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description" />
                 <div class="ms-3">
                   <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                     Traktirin Gorengan
@@ -463,7 +213,7 @@ import Home from '../layouts/Home.astro';
           <div class="p-3 md:p-4">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
-                <img class="size-[38px] rounded-lg" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description">
+                <Image class="size-[38px] rounded-lg" src="https://images.unsplash.com/photo-1612046264803-6d6b67fdee80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" inferSize alt="Description" />
                 <div class="ms-3">
                   <h3 class="group-hover:text-indigo-500 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                     Buy me a Coffee
@@ -485,7 +235,7 @@ import Home from '../layouts/Home.astro';
     
   </section>
   
-  <section class="container mx-4 mx-auto my-5 md:my-8">
+  <section class="container mx-auto my-5 md:my-8">
     <!-- Comment Form -->
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div class="mx-auto max-w-2xl">
